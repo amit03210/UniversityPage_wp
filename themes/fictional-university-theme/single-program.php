@@ -13,9 +13,8 @@ while(have_posts()) {
             </p>
         </div>
 
-        <div class="generic-content"><?php the_content() ?></div>
-        &nbsp;
-        <hr> 
+        <div class="generic-content"><?php the_field('main_body_content')?></div>
+
         <?php 
             $today = date('Ymd');
             $relatedEvents = new WP_Query(query: array(
@@ -61,8 +60,8 @@ while(have_posts()) {
                 <?php
                 }
                 echo "</ul>";
+                echo "<hr> &nbsp";
             } 
-            echo "<hr> &nbsp;";
             wp_reset_postdata();
             if($relatedEvents->have_posts()){
                 echo "<h3> Upcoming " . get_the_title() . " Events: </h3>";
@@ -72,9 +71,20 @@ while(have_posts()) {
 
                 }
                 
-            } 
+            }
+            wp_reset_postdata();
 
-           
+            $relatedCampus = get_field('related_campus');
+            if($relatedCampus){
+              echo "<hr class='section-break'>";
+              echo "<h2>Related Campus in which this course is being teaches: </h2>";
+              echo "<ul>";
+              foreach($relatedCampus as $campus){ ?>
+                <li class="link-list min-list"><a href="<?php echo get_the_permalink($campus) ?>"><?php echo get_the_title($campus);?></a></li>
+              <?php  
+              }
+              echo "</ul>";
+            }
         ?>
 
     </div>

@@ -17,7 +17,15 @@ body.login .button-primary:hover {
 }
 
 body.login {
-  background-color: $beige;
+  background-color: peachpuff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#login {
+  margin-right: max(60px, 10vw);
+
 }
 
 .login h1 a {

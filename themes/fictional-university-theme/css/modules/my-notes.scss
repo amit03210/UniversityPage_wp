@@ -155,3 +155,17 @@
   right: 0;
   opacity: 0;
 }
+
+.slide-up {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+// .slide-down {
+//   max-height: 500px; /* or use a large enough value */
+//   padding-top: 1em;
+//   padding-bottom: 1em;
+// }

@@ -1,0 +1,10 @@
+plugins/*
+themes/*
+uploads/
+cache/
+*.log
+*.zip
+.env
+node_modules/
+vendor/
+!themes/fictional-university-theme/
